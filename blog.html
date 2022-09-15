@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Speed Monster</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="box-container" class="nav-bar">
+      <div class="navigation">
+        <div class="logo">
+          <a href="index.html">Typing <span class="logo-second">Master</span> </a> 
+        </div>
+        <div class="nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <section class="blog box-container">
+
+      <div class="blog-content">
+        <h1>1. Difference Between Local storage and Session storage</h1><br><br>
+        <h3>Session Storage</h3>
+        <p>A browsing session approximates your use of a website. If you visit a site, browse around for a bit, then turn off your computer, you can think of that time as a single session. Your browser configuration may change this in subtle ways, but a session aims to represent the chunk of time you interact with a site.
+
+          Session storage is unique to each browser tab. If you open a new tab and navigate to the same site, you'll start a new session with its own storage. However, if you use a "duplicate tab" feature in your browser, that may reuse the same session. You can't rely too much on the specific details of a "session". Instead, focus on the core concept: session storage is temporary.</p>
+        <br><br>
+        <h3>Local Storage</h3>
+        <p>Local storage maintains data across all instances of a site, whether they're in different tabs or windows. It is also permanent, so the data won't disappear when you close your browser.When you open a website that previously used local storage, it will always have access to that stored data.As a web developer, you can use this mechanism to retain data about a user. Some websites might use this to keep you logged in or provide a more personalized experience.</p><br><br>
+      </div>
+      <div class="blog-content">
+        <h1>2. Difference Between Global Scope and Block Scope</h1><br><br>
+        <h3>Global Scope</h3>
+        <p>A variable exists inside or outside a block. If a variable is declared outside all functions or curly braces ({}), it exists in the global scope. The global variables can be accessed by any line of code in the program, including inside blocks.</p>
+        <br>
+        <h3>Block Scope</h3>
+        <p>So far, we’ve seen variables defined with the var keyword. Var can declare a variable either in the global or local scope. The variables that are declared within the block scope are comparable to local ones. They are available within the block that they are defined.
+
+          The main difference between the local scope and block scope is that the block statements (e.g. if conditions or for loops), don't create a new scope. So the var keyword will not have an effect, because the variables are still in the same scope.</p><br><br>
+      </div>
+      <div class="blog-content">
+        <h1>3. How javascript eventloop work</h1><br><br>
+        <p>
+          <ol>
+            <li>The call to the main function is first pushed into the stack (as a frame). Then the browser pushes the first statement in the main function into the stack which is console.log(‘A’). This statement is executed and upon completion that frame is popped out. Alphabet A is displayed in the console.</li>
+            <li>The next statement (setTimeout() with callback exec() and 0ms wait time) is pushed into the call stack and execution starts. setTimeout function uses a Browser API to delay a callback to the provided function. The frame (with setTimeout) is then popped out once the handover to browser is complete (for the timer).</li>
+            <li>console.log(‘C’) is pushed to the stack while the timer runs in the browser for the callback to the exec() function. In this particular case, as the delay provided was 0ms, the callback will be added to the message queue as soon as the browser receives it (ideally).</li>
+            <li>After the execution of the last statement in the main function, the main() frame is popped out of the call stack, thereby making it empty. For the browser to push any message from the queue to the call stack, the call stack has to be empty first. That is why even though the delay provided in the setTimeout() was 0 seconds, the callback to exec() has to wait till the execution of all the frames in the call stack is complete.</li>
+            <li>Now the callback exec() is pushed into the call stack and executed. The alphabet C is display on the console. This is the event loop of javascript.</li>
+          </ol>
+        </p><br><br>
+      </div>
+      <div class="blog-content">
+        <h1>4. How many ways we can get undefined</h1><br><br>
+        <p> undefined is a property of the global object. That is, it is a variable in global scope. The initial value of undefined is the primitive value undefined.
+
+          In all non-legacy browsers, undefined is a non-configurable, non-writable property. (Even when this is not the case, avoid overriding it.)
+          
+          A variable that has not been assigned a value is of type undefined. A method or statement also returns undefined if the variable that is being evaluated does not have an assigned value. A function returns undefined if a value was not returned. </p><br><br>
+      </div>
+      
+      
+    </section>
+
+    <!-- <script src="./history.js"></script>
+    <script src="./script.js"></script> -->
+  </body>
+</html>
